@@ -3,5 +3,5 @@
 miniapps_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(miniapps_path)
 
-# require 'miniapps/string'
+require 'miniapps/string'
 require 'miniapps/cli'
