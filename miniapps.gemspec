@@ -14,7 +14,9 @@ Gem::Specification.new do |gem|
   gem.name          = "miniapps"
   gem.require_paths = ["lib"]
   gem.version       = Miniapps::VERSION
-  # gem.executables = ["miniapps"]
 
-  gem.add_development_dependency "thor", "~> 0.18.1"
+
+
+  gem.add_dependency(%q<thor>, ["~> 0.14.6"])
+
 end

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 miniapps_path = File.expand_path('../../lib', __FILE__)
-puts miniapps_path
 $:.unshift(miniapps_path)
 
+# require 'miniapps/string'
 require 'miniapps/cli'
