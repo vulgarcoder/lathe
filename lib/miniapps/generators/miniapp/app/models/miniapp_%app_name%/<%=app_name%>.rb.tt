@@ -1,5 +1,5 @@
-module Miniapp<%=app_class%>
-  class <%=app_class%> < MiniApp
+module Miniapp<%=@app_class%>
+  class <%=@app_class%> < MiniApp
 
     def build(story, user)
      
