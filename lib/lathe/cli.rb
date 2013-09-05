@@ -18,10 +18,10 @@ module Lathe
 			if app_name
 				if(options[:exclude]) then
 					@app_path=app_name
-					directory 'miniapp', app_name
+					directory 'mini_app', @app_path
 				else
 					@app_path="mini_app_"+app_name
-					directory 'miniapp', app_name
+					directory 'mini_app', @app_path
 				end	
 			else
 				say '请输入应用名称'
@@ -33,7 +33,9 @@ module Lathe
 			end
 			def app_path
 				@app_path
-				"mini_app_"+app_name
+			end
+			def package
+				@app_path.camelize
 			end
 			def app_class
 				app_name.camelize
@@ -44,7 +46,7 @@ module Lathe
 	lathe new [app_name]
 
 2.create plugin without miniapp
-	lathe new [app_name] -exclude
+	lathe new [app_name] --exclude
 				THING
 				help # call help to tack on those useful Task descriptions
 			end

@@ -1,5 +1,5 @@
-module <%=@app_path.camelize%>
-  class <%=@app_class%> < MiniApp
+module <%=app_path.camelize%>
+  class <%=app_class%> < MiniApp
 
     def build(story, user)
      
