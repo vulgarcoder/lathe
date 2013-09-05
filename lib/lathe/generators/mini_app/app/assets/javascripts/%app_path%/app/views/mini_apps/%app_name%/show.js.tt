@@ -10,7 +10,7 @@ jQuery(function($) {
         initialize: function(options) {},
         serialize: function() {
             //这里传递给模板渲染的对象
-            var context = this.model.toJSON(),
+            var context = this.model.toJSON();
             return context;
         },
         afterRender: function() {

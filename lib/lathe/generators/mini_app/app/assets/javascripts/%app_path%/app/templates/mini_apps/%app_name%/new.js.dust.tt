@@ -1,3 +1,6 @@
 <div>
+	<input autocomplete="off" class="miniapp-input title  input-block input-bottom-dotted validate[required]"
+    name="<%=app_name%>" data-autoenable=".action-submit" placeholder="请输入内容"
+    type="text">
     这是web的输入表单，位置在 app/templates/mini_apps/<%=app_name%>/new.js.dust
 </div>
