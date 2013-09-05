@@ -13,16 +13,21 @@ module Miniapps
 		desc 'new', 'create a miniapp project'
 		def new
 			@app_class=app_name.camelize
-			time=Time.now.strftime("%Y%m%d%H%M%S")
 			if app_name
 				directory 'miniapp', app_name
 			else
 				say 'no app name'
 			end 
 		end
-
-		
-		
+		def now
+			Time.now.strftime("%Y%m%d%H%M%S")
+		end
+		def app_path
+			"miniapp_"+app_name
+		end	
+		def app_class
+			app_name.camelize
+		end		
 	end
 CLI.start
 
