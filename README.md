@@ -1,12 +1,12 @@
 # Miniapps
 
-Generator for minxing365's miniapps developer.
+Generator for minxing365's  plugin developer.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'miniapps'
+    gem 'lathe'
 
 And then execute:
 
@@ -14,11 +14,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install miniapps
+    $ gem install lathe
 
 ## Usage
 
-miniapps new miniapp_study
+lathe new  study 
 
 ## Contributing
 

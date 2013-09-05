@@ -1,3 +1,3 @@
-module Miniapps
+module Lathe
   VERSION = "0.0.1"
 end

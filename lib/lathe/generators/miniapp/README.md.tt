@@ -1,4 +1,4 @@
-miniapp_study
+<%=app_path%>
 =============
 为党建系统开发的学习应用
 
@@ -8,10 +8,10 @@ miniapp_study
 
 #### 1. 在Gemfile中添加 ####
 
-gem 'miniapp_study',:git=>"git@github.com:jimrok/miniapp_study.git"
+gem '<%=app_path%>',:git=>"TODO"
 
 #### 2. 安装插件 ####
-rails g miniapp_study:install
+rails g <%=app_path%>:install
 
 
 #### 3. 执行脚本 ####
