@@ -1,0 +1,11 @@
+.icon-<%=app_name%>{
+	background: asset-url('miniapp_<%=app_name%>/<%=app_name%>.png') no-repeat;
+	background-position: 0px 0px;
+}
+
+a:hover,.active{
+	.icon-<%=app_name%>{
+		background: asset-url('miniapp_<%=app_name%>/<%=app_name%>_active.png') no-repeat;
+		background-position: 0px 0px;
+	}
+} 

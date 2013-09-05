@@ -1,5 +1,5 @@
 jQuery(function($) {
-    App.Views.MiniApps.<%=app_class%>New = MiniAppNew.extend({
+    App.Views.MiniApps.<%=@app_class%>New = MiniAppNew.extend({
         className: "validationEngineContainer <%=app_name%>-input-wrap",
         template: "mini_apps/<%=app_name%>/new",
         events: {

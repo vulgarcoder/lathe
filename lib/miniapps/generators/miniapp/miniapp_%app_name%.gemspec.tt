@@ -6,7 +6,7 @@ require "<%=app_name%>/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "<%=app_name%>"
-  s.version     = <%= app_name.camelize%>::VERSION
+  s.version     = Miniapp<%=@app_class%>::VERSION
   s.authors     = ["dev@dehuinet.com"]
   s.email       = ["dev@dehuinet.com"]
   s.homepage    = ""

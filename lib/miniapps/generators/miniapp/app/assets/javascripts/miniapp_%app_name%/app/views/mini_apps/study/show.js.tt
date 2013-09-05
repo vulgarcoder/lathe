@@ -1,5 +1,5 @@
 jQuery(function($) {
-    App.Views.MiniApps.<%=app_class%>Show = MiniAppShow.extend({
+    App.Views.MiniApps.<%=@app_class%>Show = MiniAppShow.extend({
         template: "mini_apps/<%=app_name%>/show",
         events: {
         },
