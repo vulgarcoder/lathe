@@ -1,36 +1,63 @@
+#encoding: utf-8
 require 'thor'
 
 module Lathe
-	class CLI < Thor	
+	class CLI < Thor
 		include Thor::Actions
 
-		argument :app_name, required: true
-		method_option :m, :type => :string, :description => '是否需要生成miniapp的相关输入框架', :default => 'false'
+		#    method_option :miniapp, :type => :boolean
 		def self.source_root
 			File.join File.dirname(__FILE__), 'generators'
 		end
 
-		desc 'new', 'create a miniapp project'
+
+		argument :app_name, required: false
+		desc 'new', 'create a plugin project'
+		method_option :exclude, :type => :boolean, :description => '是否需要生成miniapp的相关输入框架', :default => false
 		def new
-		 puts "#{options}"
-			@app_class=app_name.camelize
 			if app_name
-				directory 'miniapp', app_name
+				if(options[:exclude]) then
+					@app_path=app_name
+					directory 'miniapp', app_name
+				else
+					@app_path="mini_app_"+app_name
+					directory 'miniapp', app_name
+				end	
 			else
-				say 'no app name'
-			end 
+				say '请输入应用名称'
+			end
 		end
-		def now
-			Time.now.strftime("%Y%m%d%H%M%S")
+		no_tasks do
+			def now
+				Time.now.strftime("%Y%m%d%H%M%S")
+			end
+			def app_path
+				@app_path
+				"mini_app_"+app_name
+			end
+			def app_class
+				app_name.camelize
+			end
+			def the_banner
+				puts <<-THING
+1.create plugin include miniapp
+	lathe new [app_name]
+
+2.create plugin without miniapp
+	lathe new [app_name] -exclude
+				THING
+				help # call help to tack on those useful Task descriptions
+			end
 		end
-		def app_path
-			"miniapp_"+app_name
-		end	
-		def app_class
-			app_name.camelize
-		end		
 	end
-CLI.start
+	if ARGV.empty?
+		# Perform the default, it doesn't have to be a Thor task
+		CLI.new.the_banner
+	else
+		# Start Thor as usual
+		CLI.start
+	end
+	# CLI.start
 
 end #Miniapps
 
