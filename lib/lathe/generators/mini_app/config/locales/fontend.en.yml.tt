@@ -4,6 +4,6 @@
 en:
   ft:
     miniapp:
-      <%app_name%>:
-        filter: "<%app_name%>" 
-        text: "post <%app_name%>" 
+      <%=app_name%>:
+        filter: "<%=app_name%>" 
+        text: "post <%=app_name%>" 

@@ -4,6 +4,6 @@
 zh-CN:
   ft:
     miniapp:
-      <%app_name%>:
-        filter: "<%app_name%>" 
-        text: "发布 <%app_name%>" 
+      <%=app_name%>:
+        filter: "<%=app_name%>" 
+        text: "发布 <%=app_name%>" 
