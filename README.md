@@ -1,6 +1,6 @@
 # Miniapps
 
-TODO: Write a gem description
+Generator for minxing365's miniapps developer.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+miniapps new miniapp_study
 
 ## Contributing
 

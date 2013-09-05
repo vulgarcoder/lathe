@@ -1,0 +1,3 @@
+<div>
+    这是mobile的展示表单，位置在 app/templates/mobile/mini_apps/<%=app_name%>/new.js.dust
+</div>

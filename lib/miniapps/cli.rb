@@ -12,6 +12,7 @@ module Miniapps
 
 		desc 'new', 'create a miniapp project'
 		def new
+			@app_class=app_name.camelize
 			if app_name
 				directory 'miniapp', app_name
 			else

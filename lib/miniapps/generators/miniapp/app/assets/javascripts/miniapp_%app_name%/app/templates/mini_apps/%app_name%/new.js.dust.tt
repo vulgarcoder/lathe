@@ -1,0 +1,3 @@
+<div>
+    这是web的输入表单，位置在 app/templates/mini_apps/<%=app_name%>/new.js.dust
+</div>
