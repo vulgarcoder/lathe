@@ -17,8 +17,10 @@ Or install it yourself as:
     $ gem install lathe
 
 ## Usage
-
+### include mini_app views
 lathe new  study 
+### exclude mini_app views
+lathe new  study --exclude
 
 ## Contributing
 
