@@ -41,10 +41,16 @@ module <%=package%>
     def call_index(instance,options={})
       #package = {:object_id=>instance.id,:description=>instance.title,:created_at=>instance.created_at.to_i,:updated_at=>instance.updated_at.to_i}
     end
+
     #返回当前miniapp对应的json
     def dump_to_hash(instance)
-    {}
+    {
+        :api_url=>"/#{API::prefix}/#{API::versions[0]}/mmodules/<%=app_name%>/#{instance.id}",
+        :m_url=>"/mini_apps/<%=app_name%>/#{id}",
+        :title=>instance.title
+    }
     end
+
     #如果当前miniapp的json中还有引用的对象，需要在此方法中进行填充，确保前端通过reference可以查询到这些引用对象
     #如
     def call_references(instance,keep_raw = true)
