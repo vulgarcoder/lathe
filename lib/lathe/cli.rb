@@ -31,6 +31,9 @@ module Lathe
 			def now
 				Time.now.strftime("%Y%m%d%H%M%S")
 			end
+			def now1
+				(Time.now+60).strftime("%Y%m%d%H%M%S")
+			end
 			def app_path
 				@app_path
 			end
