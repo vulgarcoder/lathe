@@ -1,13 +1,57 @@
-module <%=app_path.camelize%>
+module <%=package%>
   class <%=app_class%> < MiniApp
 
-    def build(story, user)
-     
+  	#处理miniapp创建的请求
+    # * *Args*    :
+    #   - +properties+ -> 客户端请求的参数，一个hash集合，形如：{title:"my Title"}
+    #   - +options+ -> 扩展参数
+    def build(properties, options={})
+     title = properties["title"]
+
+      model = <%=package%>::<%=app_class%>Model.create(:title=>title)
+
+      model.save!
+      model 
     end
 
+    #处理miniapp修改的请求
+    # * *Args*    :
+    #   - +instance+ -> <%=app_class%>Model实例
+    #   - +current_user+ -> 当前用户对象
+    #   - +http_action+ -> http请求类型，形如：get post put delete
+    #   - +proc_name+ -> 更新请求的函数名称，这个需要跟客户端进行约定，如 merge,update等
+    #   - +properties+ -> 客户端请求的参数，一个hash集合，形如：{title:"my Title"}
+    #
+    def call_service(instance,current_user, http_action, proc_name, properties)
+
+    end 
+
+    #通过方法返回主对象
+    # * *Args*    :
+    #   - +id+ -> 对象主键id
+    # * *Returns* :
+    #   - <%=app_class%>Model实例
+    #
     def find_instance_by_id(id)
-      # MiniappStudy::QuestionModel.find_by_id id
+      <%=package%>::<%=app_class%>Model.find_by_id id
     end
-    
+
+
+    #建立系统搜索用的索引
+    def call_index(instance,options={})
+      #package = {:object_id=>instance.id,:description=>instance.title,:created_at=>instance.created_at.to_i,:updated_at=>instance.updated_at.to_i}
+    end
+    #返回当前miniapp对应的json
+    def dump_to_hash(instance)
+    {}
+    end
+    #如果当前miniapp的json中还有引用的对象，需要在此方法中进行填充，确保前端通过reference可以查询到这些引用对象
+    #如
+    def call_references(instance,keep_raw = true)
+      result = []
+      #result中存放reference对象，对象创建如：Reference.new(:user,u_id)
+      #result.concat(instance.user_ids.map {|u_id| Reference.new(:user,u_id) })
+      keep_raw ? result : result.uniq.compact
+    end 
   end
 end

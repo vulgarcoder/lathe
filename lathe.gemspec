@@ -4,7 +4,7 @@ require File.expand_path('../lib/lathe/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["vulgarcoder"]
   gem.email         = ["vulgarcoder@gmail.com"]
-  gem.description   = %q{Generator for plugin developer.}
+  gem.description   = %q{Generator for minxing365's  plugin developer.}
   gem.summary       = %q{For minxing365.com}
   gem.homepage      = "https://github.com/vulgarcoder/lathe"
 

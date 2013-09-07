@@ -1,0 +1,9 @@
+module <%=package%>
+	class <%=app_class%>Model < ActiveRecord::Base
+		include Cacheable
+
+		model_cache do
+			with_attribute :id
+		end
+	end
+end

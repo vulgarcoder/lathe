@@ -9,8 +9,9 @@ jQuery(function($) {
             return true;
         },
         getProperties: function() {
+          var self=this;
           return{
-
+             title:this.$(".title").val()
           } 
             //return json data
         }

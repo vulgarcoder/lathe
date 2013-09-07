@@ -1,0 +1,9 @@
+class Create<%=package%><%=app_class%>Models < ActiveRecord::Migration
+  def change
+    create_table :<%=app_path%>_<%=app_name%>_models do |t|
+      t.string :title
+      
+      t.timestamps
+    end
+  end
+end
