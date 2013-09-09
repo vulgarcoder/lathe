@@ -7,7 +7,6 @@ jQuery(function($) {
             //在这里可以把服务器返回的properties进行进一步解析
             return model; 
         },
-        initialize: function(options) {},
         serialize: function() {
             //这里传递给模板渲染的对象
             var context = this.model.toJSON();
