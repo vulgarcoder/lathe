@@ -49,7 +49,7 @@ module <%=package%>
     def dump_to_hash(instance,include_ref=true)
     {
         :api_url=>"/#{API::prefix}/#{API::versions[0]}/mmodules/<%=app_name%>/#{instance.id}",
-        :m_url=>"/mini_apps/<%=app_name%>/#{id}",
+        :m_url=>"/mini_apps/<%=app_name%>/#{instance.id}",
         :title=>instance.title
     }
     end
