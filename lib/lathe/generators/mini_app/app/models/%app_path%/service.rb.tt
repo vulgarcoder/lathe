@@ -1,5 +1,5 @@
 module <%=package%>
-  class <%=app_class%> < MiniApp
+  class Servicje < MiniApp
 
   	#处理miniapp创建的请求
     # * *Args*    :
@@ -42,8 +42,11 @@ module <%=package%>
       #package = {:object_id=>instance.id,:description=>instance.title,:created_at=>instance.created_at.to_i,:updated_at=>instance.updated_at.to_i}
     end
 
-    #返回当前miniapp对应的json
-    def dump_to_hash(instance)
+    #返回当前miniapp对应的JSON对象
+    # * *Args*    :
+    #   - +instance+ -> <%=app_class%>Model实例
+    #   - +include_ref+ -> 是否需要包括references，默认是需要包含的，只有当需要单独请求这一个miniapp对象的json时，需要填充整个model对象，比如，json对象中存在user_id,同时也需要填充user对象，确保前端解析时存在该实体对象。
+    #    def dump_to_hash(instance,include_ref=true)
     {
         :api_url=>"/#{API::prefix}/#{API::versions[0]}/mmodules/<%=app_name%>/#{instance.id}",
         :m_url=>"/mini_apps/<%=app_name%>/#{id}",
