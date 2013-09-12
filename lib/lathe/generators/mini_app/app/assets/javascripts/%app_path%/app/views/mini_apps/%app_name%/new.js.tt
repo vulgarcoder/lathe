@@ -6,6 +6,9 @@ jQuery(function($) {
         },
         afterRender: function() {},
         validate: function() {
+            if(this.$(".title").val().length==0){
+              return "标题不允许为空";
+            }
             return true;
         },
         getProperties: function() {

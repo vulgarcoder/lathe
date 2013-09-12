@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+module <%=package%>
+  module ApiV1<%=app_name.camelize%>
+    def self.included(api)
+      # api.namespace :<%=app_name%> do
+        # get nil do
+        #   ret = {:apps=> MiniApp.apps}
+        # end
+      end
+    end
+
+  end
+end
