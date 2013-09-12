@@ -3,13 +3,20 @@ module <%=package%>
   class Engine < ::Rails::Engine
     isolate_namespace <%=package%>
 
-	initializer '<%=app_path%>.before' do |app|
-		#这儿的代码在rails启动是最先执行
-     end
-     initializer '<%=app_path%>.behind', :after=> :disable_dependency_loading do |app|
-		#这儿的代码在rails加载器都加载完成以后再执行
-		::API.send "include",<%=package%>::ApiV1<%=app_name.camelize%>
-     		MiniApp.apps << {:title=>I18n.t("ft.mini_app.<%=app_name%>.app_text"),:create_url=>'/mini_apps/<%=app_name%>s/new',:icon=> ActionController::Base.helpers.asset_path('<%=app_path%>/<%=app_name%>_white.png')}
-     end
+  	initializer '<%=app_path%>.before' do |app|
+  		#这儿的代码在rails启动是最先执行
+      #加载migrate
+      unless app.root.to_s.match root.to_s
+        app.config.paths["db/migrate"] += config.paths["db/migrate"].expanded
+      end
+    end
+
+    initializer '<%=app_path%>.behind', :after=> :disable_dependency_loading do |app|
+  		#这儿的代码在rails加载器都加载完成以后再执行
+  		#加载API
+  		::API.send "include",<%=package%>::ApiV1<%=app_name.camelize%>
+
+      MiniApp.apps << {:title=>I18n.t("ft.mini_app.<%=app_name%>.app_text"),:create_url=>'/mini_apps/<%=app_name%>s/new',:icon=> ActionController::Base.helpers.asset_path('<%=app_path%>/<%=app_name%>_white.png')}
+    end
   end
 end

@@ -6,7 +6,7 @@ module <%=package%>
         # get nil do
         #   ret = {:apps=> MiniApp.apps}
         # end
-      end
+      #end
     end
 
   end
