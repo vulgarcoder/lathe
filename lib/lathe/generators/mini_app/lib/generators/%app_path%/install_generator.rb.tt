@@ -1,6 +1,7 @@
 module <%=package%>
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
+      source_root File.expand_path('../templates', __FILE__)
 
       desc "Installs <%=package%>."
 
@@ -23,6 +24,11 @@ module <%=package%>
 *= require <%=app_path%>/application
           RUBY
         end
+
+         MiniApp.where(:name=>"<%=app_name%>").delete_all
+         num=MiniApp.maximum(:order_number)+10
+         mini_app = <%=package%>::Service.new(:name=>"<%=app_name%>", :order_number=>num)
+         mini_app.save!
 
         readme "README"
       end

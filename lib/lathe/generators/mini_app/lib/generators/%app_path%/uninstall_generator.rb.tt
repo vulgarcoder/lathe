@@ -5,12 +5,13 @@ module <%=package%>
       desc "Uninstall <%=package%>."
 
       def install
-        gsub_file 'config/routes.rb', /\n.*<%=package%>::Engine.*\n/, "\n"
-        gsub_file 'Gemfile', /\n.*<%=app_path%>.*\n/, "\n"
+        gsub_file 'config/routes.rb', /\n.*<%=package%>::Engine.*\n\n/, "\n"
         gsub_file 'app/assets/javascripts/application.js', /\n.*<%=app_path%>.*\n/, "\n"
         gsub_file 'app/assets/javascripts/mobile.js', /\n.*<%=app_path%>.*\n/, "\n"
         gsub_file 'app/assets/stylesheets/application.css', /\n.*<%=app_path%>.*\n/, "\n"
         gsub_file 'app/assets/stylesheets/mobile.css', /\n.*<%=app_path%>.*\n/, "\n"
+
+        MiniApp.where(:name=>"<%=app_name%>").delete_all 
         
       end
     end
