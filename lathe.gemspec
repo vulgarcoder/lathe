@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "lathe"
   gem.require_paths = ["lib"]
   gem.version       = Lathe::VERSION
-
+  gem.licenses = ["MIT"]
 
 
   gem.add_dependency(%q<thor>, ["~> 0.14.6"])
