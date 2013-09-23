@@ -16,7 +16,7 @@ module <%=package%>
   		#加载API
   		::API.send "include",<%=package%>::ApiV1<%=app_name.camelize%>
 
-      MiniApp.apps << {:title=>I18n.t("ft.mini_app.<%=app_name%>.app_text"),:create_url=>'/mini_apps/<%=app_name%>s/new',:icon=> ActionController::Base.helpers.asset_path('<%=app_path%>/<%=app_name%>_white.png')}
+      MiniApp.apps << {:title=>I18n.t("ft.mini_app.<%=app_name%>.app_text"),:create_url=>'/mini_apps/<%=app_name%>/new',:icon=> ActionController::Base.helpers.asset_path('<%=app_path%>/<%=app_name%>_white.png')}
     end
   end
 end
