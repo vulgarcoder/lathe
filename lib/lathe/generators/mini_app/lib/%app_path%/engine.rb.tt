@@ -11,7 +11,7 @@ module <%=package%>
       end
     end
 
-    initializer '<%=app_path%>.behind', :after=> :disable_dependency_loading do |app|
+    config.after_initialize do 
   		#这儿的代码在rails加载器都加载完成以后再执行
   		#加载API
   		::API.send "include",<%=package%>::ApiV1<%=app_name.camelize%>

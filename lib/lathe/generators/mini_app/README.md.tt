@@ -1,6 +1,6 @@
 <%=app_path%>
 =============
-为党建系统开发的学习应用
+这是通过lathe工具生成的插件，可以按照以下步骤进行安装
 
 安装步骤
 ---------
@@ -8,7 +8,7 @@
 
 #### 1. 在Gemfile中添加 ####
 
-gem '<%=app_path%>',:git=>"TODO"
+gem '<%=app_path%>',:path=>"这地方写mini_app工程的路径"
 
 #### 2. 安装插件 ####
 rails g <%=app_path%>:install
