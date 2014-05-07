@@ -14,9 +14,11 @@ module <%=package%>
     config.after_initialize do 
   		#这儿的代码在rails加载器都加载完成以后再执行
   		#加载API
+      unless ( File.basename($0) == "rake")
   		::API.send "include",<%=package%>::ApiV1<%=app_name.camelize%>
 
       MiniApp.apps << {:title=>I18n.t("ft.mini_app.<%=app_name%>.app_text"),:create_url=>'/mini_apps/<%=app_name%>/new',:icon=> ActionController::Base.helpers.asset_path('<%=app_path%>/<%=app_name%>_white.png')}
+      end
     end
   end
 end
